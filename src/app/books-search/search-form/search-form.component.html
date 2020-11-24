@@ -1,0 +1,5 @@
+<mat-form-field class="example-full-width">
+  <mat-label>Search by author</mat-label>
+  <input type="input" matInput [formControl]="searchFormField" placeholder="Search by author....">
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="booksSearch()">Search</button>
