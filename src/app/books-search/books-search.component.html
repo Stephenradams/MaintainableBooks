@@ -2,5 +2,5 @@
   <h1>Our Current Books</h1>
   <app-search-form (searchForBooks)="bookSearch($event)"></app-search-form>
   <app-searching [displaySearchingMessage]="showSearching"></app-searching>
-  <app-search-results [resultsToDisplay]="listOfAuthors"></app-search-results>
+  <app-search-results [resultsToDisplay]="listOfAuthors" (showTitleFullDetails)="showTitleFullDetails()"></app-search-results>
 </div>

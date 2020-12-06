@@ -12,9 +12,17 @@ import {MatListModule} from '@angular/material/list';
 import {MatCardModule} from '@angular/material/card';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatButtonModule} from '@angular/material/button';
-import { SearchResultsComponent } from './search-results/search-results.component';
-import { SearchingComponent } from './searching/searching.component';
+import {SearchResultsComponent} from './search-results/search-results.component';
+import {SearchingComponent} from './searching/searching.component';
+import {RouterModule, Routes} from '@angular/router';
 
+
+const routes: Routes = [
+  {
+    path: '',
+    component: BooksSearchComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -35,7 +43,11 @@ import { SearchingComponent } from './searching/searching.component';
     MatCardModule,
     MatButtonModule,
     MatExpansionModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule.forChild(routes)
+  ],
+  exports: [
+    RouterModule
   ]
 })
 export class BookSearchModule {

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-search-results',
@@ -8,5 +8,10 @@ import {Component, Input} from '@angular/core';
 export class SearchResultsComponent {
 
   @Input() resultsToDisplay: Array<any>;
+  @Output() showTitleFullDetails: EventEmitter<any> = new EventEmitter<any>();
+
+  showFullDetails(): void {
+    this.showTitleFullDetails.emit();
+  }
 
 }

@@ -2,6 +2,12 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {environment} from '../../environments/environment';
+import {Author} from '../models/Author';
+
+interface SearchResult {
+  uri?: string;
+  author: Array<Author>;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +22,9 @@ export class BookSearchService {
   }
 
 
-  searchForBooksByLastname(authorLastname: string): Observable<any> {
+  searchForBooksByLastname(authorLastname: string): Observable<SearchResult> {
     console.log(BookSearchService.getUrlPath());
     const searchUrl = BookSearchService.getUrlPath() + 'authors?lastName=' + authorLastname;
-    return this.http.get(searchUrl);
+    return this.http.get<SearchResult>(searchUrl);
   }
 }
