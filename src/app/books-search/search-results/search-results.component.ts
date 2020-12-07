@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Author } from '../../models/Author';
 
 @Component({
   selector: 'app-search-results',
@@ -7,11 +8,11 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 })
 export class SearchResultsComponent {
 
-  @Input() resultsToDisplay: Array<any>;
+  @Input() resultsToDisplay: Array<Author>;
   @Output() showTitleFullDetails: EventEmitter<any> = new EventEmitter<any>();
 
-  showFullDetails(): void {
-    this.showTitleFullDetails.emit();
+  showFullDetails(authorLastname: string): void {
+    this.showTitleFullDetails.emit(authorLastname);
   }
 
 }

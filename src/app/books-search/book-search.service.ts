@@ -23,7 +23,6 @@ export class BookSearchService {
 
 
   searchForBooksByLastname(authorLastname: string): Observable<SearchResult> {
-    console.log(BookSearchService.getUrlPath());
     const searchUrl = BookSearchService.getUrlPath() + 'authors?lastName=' + authorLastname;
     return this.http.get<SearchResult>(searchUrl);
   }

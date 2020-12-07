@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {SearchResultsComponent} from './search-results/search-results.component';
 import {SearchingComponent} from './searching/searching.component';
 import {RouterModule, Routes} from '@angular/router';
+import { BookDetailsModule } from '../book-details/book-details.module';
 
 
 const routes: Routes = [
@@ -44,7 +45,8 @@ const routes: Routes = [
     MatButtonModule,
     MatExpansionModule,
     MatIconModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    BookDetailsModule
   ],
   exports: [
     RouterModule

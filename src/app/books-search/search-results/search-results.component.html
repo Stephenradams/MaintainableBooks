@@ -1,11 +1,8 @@
 <div class="listing" *ngFor="let author of resultsToDisplay">
   <mat-card *ngIf="author.titles">
     <mat-card-title>{{ author.authordisplay }}</mat-card-title>
-    <mat-card-content>
-      <div>Number of titles: {{author.titles.isbn.length}}</div>
-    </mat-card-content>
     <mat-card-actions>
-      <button mat-button color="primary" (click)="showFullDetails()">View titles</button>
+      <button mat-button color="primary" (click)="showFullDetails(author.authorlast)">View titles</button>
     </mat-card-actions>
 
   </mat-card>
