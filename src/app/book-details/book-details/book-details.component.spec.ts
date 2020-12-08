@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { BookDetailsComponent } from './book-details.component';
@@ -8,9 +9,9 @@ describe('BookDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BookDetailsComponent ]
-    })
-    .compileComponents();
+      imports: [HttpClientModule],
+      declarations: [BookDetailsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
