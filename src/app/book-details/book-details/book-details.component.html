@@ -1,0 +1,8 @@
+<div *ngIf="showResults" class="results">
+  <mat-card *ngFor="let work of worksResult">
+    <mat-card-title>{{work.titleAuth}}</mat-card-title>
+    <mat-card-content>
+      {{work.titleSubtitleAuth}}
+    </mat-card-content>
+  </mat-card>
+</div>

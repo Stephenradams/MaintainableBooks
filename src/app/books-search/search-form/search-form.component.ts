@@ -22,6 +22,7 @@ export class SearchFormComponent implements OnInit {
   }
 
   booksSearch(): void {
+    console.log(this.searchFormField.value);
     this.searchForBooks.emit(this.searchFormField.value);
   }
 }

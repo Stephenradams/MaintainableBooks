@@ -1,4 +1,8 @@
 <div class="wrapper">
   <h1>Our Current Books</h1>
-<app-search-form></app-search-form>
+  <app-search-form (searchForBooks)="bookSearch($event)"></app-search-form>
+  <app-searching [displaySearchingMessage]="showSearching"></app-searching>
+  <app-search-results [resultsToDisplay]="listOfAuthors"
+                      (showTitleFullDetails)="showTitleFullDetails($event)"></app-search-results>
+  <app-book-details [authorId]="chosenAuthorId"></app-book-details>
 </div>
